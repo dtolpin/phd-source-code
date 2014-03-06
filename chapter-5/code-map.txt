@@ -1,0 +1,18 @@
+- Makefile - makefile for the project
+- csp.lhs - command-line driver
+
+## Core 
+
+- Def.lhs - problem definition and parser
+- FD.lhs - Finite-Domain solver (maintaining arc consistency)
+- XO.lhs - Variable-ordering heuristics
+- SC.lhs - Solution Counting heuristic
+- BP.lhs - Belief Propagation for solution counting, used by SC
+- PAC.lhs - pAC heuristic
+- Bridge.lhs - translation from Def to FD and SC
+
+## Utilities
+
+- Perm.lhs - random list permutations
+- Test.lhs - unit testing
+- Dibbuk.lhs - debugging

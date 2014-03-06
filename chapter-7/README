@@ -1,0 +1,62 @@
+= Exploratory algorithm code and data =
+
+Makefile - Makefile for building command-line tools
+           and documentation, old-fashioned.
+
+== Auxiliary libaries for OCaml ==
+
+ocaml-base (modified) - install from ocaml-base/ 
+ocaml-batteries       - install from the distribution site 
+                        or via packages
+ocaml-pcre            - install from the distribution site 
+                        or via packages
+
+== Search ==
+
+=== Search ALgorithms ===
+
+options.ml[i]        - Algorithm options (optimizations, assumptions etc.).
+stat.ml[i]           - Globals and functions for gathering statistics.
+search.ml[i]         - search problem abstraction
+lookahead.ml[i]      - cost horizon lookahead metaheuristic
+astar.ml[i]          - A*
+lazyA.ml[i]          - Lazy A*
+
+=== 15-puzzle specific search ===
+
+pzldef.ml               - Type and common functions for N-puzzle.
+pzlProblem.ml           - Search.Problem for 15-puzzle.
+pzlHeurConflict.ml[i]   - Linear conflict heuristic.
+pzlHeurManhattan.ml[i]  - Manhattan distance heuristic.
+pzlHeurPDB.ml[i]        - Additive pattern database.
+pzlHeur.ml[i]           - Heuristic creator/combinator.
+pzlCmpHeur.ml[i]        - Utility for comparing heuristics.
+
+wpzlSolver.ml[i]        - Command-line solver for both 15-puzzle
+                          and weighted 15-puzzle.
+
+=== 15-puzzle Pattern Database Generation ===
+
+pzlGenPDB.ml[i]   - Source files for genpdb. PDB generation routines 
+                    and command line.  Requires 64-bit OS to generate
+                    a 8-tile PDB. 
+pzlComPDB.ml[i]   - Source files for compdb. Translates text 
+                    PDB into binary form.
+pzlPDBFile.ml[i]  - PDB file intefrace, for both text and binary format.
+
+=== Weighted 15-puzzle Search ===
+
+wpzProblem.ml            - Search.Problem for weighted 15-puzzle.
+wpzHeurManhattan.ml[i]   - Manhattan distance heuristic.
+wpzHeurConflict.ml[i]    - Linear conflict heurisitc.                        
+wpzHeur.ml[i]            - Heuristic creator/combinator.
+
+== Utility Modules ==
+
+perm.ml[i] - Encoding and decoding permutations;
+             used by pattern databases to encode
+             search state.
+
+== Data ==
+
+data/*     - test problems; format - problem id followed by permutation
